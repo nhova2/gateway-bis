@@ -1,0 +1,30 @@
+.admin-sidenav{
+    width: 280px;
+    padding: 2px;
+    .mat-nav-list{
+        box-sizing: border-box;
+        .mat-list-item{
+            height: 36px;
+            font-size: 14px;
+        }
+    }
+}
+.admin-content{
+    min-height: 400px;
+    padding: 2px;
+    overflow: hidden;
+    &.p-left{
+        padding-left: 16px;
+    }
+    .header-row{
+        background: #fff;
+        padding: 0 16px;
+        height: 56px;
+    }
+    .admin-wrapper{
+        margin-top: 16px;
+        padding: 16px;
+        background: #fff;
+    }
+}
+

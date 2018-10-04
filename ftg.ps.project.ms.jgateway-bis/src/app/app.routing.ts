@@ -2,6 +2,7 @@ import { Routes, RouterModule, PreloadAllModules  } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 import { PagesComponent } from './pages/pages.component';
+import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
@@ -18,6 +19,12 @@ export const routes: Routes = [
             { path: 'sign-in', loadChildren: 'app/pages/sign-in/sign-in.module#SignInModule', data: { breadcrumb: 'Sign In ' } },
             { path: 'brands', loadChildren: 'app/pages/brands/brands.module#BrandsModule', data: { breadcrumb: 'Brands' } },
             { path: 'products', loadChildren: 'app/pages/products/products.module#ProductsModule', data: { breadcrumb: 'All Products' } }
+        ]
+    },
+    { 
+        path: '', 
+        component: MainComponent, children: [
+            { path: 'admin', loadChildren: 'app/main/admin/admin.module#AdminModule', data: { breadcrumb: 'Admin Settings' } }
         ]
     },
     { path: '**', component: NotFoundComponent }

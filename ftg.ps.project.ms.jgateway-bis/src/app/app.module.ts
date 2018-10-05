@@ -17,6 +17,7 @@ import { PagesComponent } from './pages/pages.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TopMenuComponent } from './theme/components/top-menu/top-menu.component';
 import { MenuComponent } from './theme/components/menu/menu.component';
+import { AdminMenuComponent } from './theme/components/admin-menu/admin-menu.component';
 import { SidenavMenuComponent } from './theme/components/sidenav-menu/sidenav-menu.component';
 import { BreadcrumbComponent } from './theme/components/breadcrumb/breadcrumb.component';
 
@@ -46,6 +47,7 @@ import { MainComponent } from './main/main.component';
     NotFoundComponent,
     TopMenuComponent,
     MenuComponent,
+    AdminMenuComponent,
     SidenavMenuComponent,
     BreadcrumbComponent,
     OptionsComponent,

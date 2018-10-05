@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
     { name: 'Admin Dashboard', href: 'dashboard', icon: 'dashboard' },
     { name: 'Statistique', href: 'statistic', icon: '' },
     { name: 'Suivi Historique', href: '/follow', icon: '' },
+    { name: 'Alerte', href: 'alert', icon: '' },
     { name: 'Logout', href: '/sign-in', icon: 'power_settings_new' },    
   ];
   constructor(public router:Router) { }

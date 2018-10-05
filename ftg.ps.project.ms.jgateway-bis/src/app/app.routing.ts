@@ -24,7 +24,8 @@ export const routes: Routes = [
     { 
         path: '', 
         component: MainComponent, children: [
-            { path: 'admin', loadChildren: 'app/main/admin/admin.module#AdminModule', data: { breadcrumb: 'Admin Settings' } },
+            { path: '', loadChildren: 'app/main/admin/admin.module#AdminModule' },
+            { path: 'admin', loadChildren: 'app/main/admin/admin.module#AdminModule', data: { breadcrumb: '' } },
             { path: 'follow', loadChildren: 'app/main/follow/follow.module#FollowModule', data: { breadcrumb: 'Suivi Historique' } }
         ]
     },

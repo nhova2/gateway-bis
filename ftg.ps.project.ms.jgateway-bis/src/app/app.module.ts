@@ -20,6 +20,7 @@ import { MenuComponent } from './theme/components/menu/menu.component';
 import { AdminMenuComponent } from './theme/components/admin-menu/admin-menu.component';
 import { SidenavMenuComponent } from './theme/components/sidenav-menu/sidenav-menu.component';
 import { BreadcrumbComponent } from './theme/components/breadcrumb/breadcrumb.component';
+import { AdminBreadcrumbComponent } from './theme/components/admin-breadcrumb/admin-breadcrumb.component';
 
 import { AppSettings } from './app.settings';
 import { AppService } from './app.service';
@@ -50,6 +51,7 @@ import { MainComponent } from './main/main.component';
     AdminMenuComponent,
     SidenavMenuComponent,
     BreadcrumbComponent,
+    AdminBreadcrumbComponent,
     OptionsComponent,
     FooterComponent,
     MainComponent    

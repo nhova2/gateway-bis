@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-follow-demand-management',
-  templateUrl: './follow-demand-management.component.html',
-  styleUrls: ['./follow-demand-management.component.scss']
+  selector: 'app-demand-management',
+  templateUrl: './demand-management.component.html',
+  styleUrls: ['./demand-management.component.scss']
 })
 export class DemandManagementComponent implements OnInit {
 

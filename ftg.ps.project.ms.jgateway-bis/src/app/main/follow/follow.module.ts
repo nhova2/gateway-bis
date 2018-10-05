@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../../../shared/shared.module';
-import { FollowHistoryComponent } from './follow-history.component';
+import { SharedModule } from '../../shared/shared.module';
+import { FollowComponent } from './follow.component';
 import { Option1Component } from './option1/option1.component';
 import { Option2Component } from './option2/option2.component';
 import { SaveComponent } from './save/save.component';
@@ -21,7 +21,7 @@ import { LoanComponent } from './loan/loan.component';
 export const routes = [
   { 
       path: '', 
-      component: FollowHistoryComponent, children: [
+      component: FollowComponent, children: [
           { path: '', redirectTo: 'option1', pathMatch: 'full' },
           { path: 'option1', component: Option1Component, data: {  breadcrumb: 'Option1' } },
           { path: 'option2', component: Option2Component, data: {  breadcrumb: 'Option1' } },
@@ -47,7 +47,7 @@ export const routes = [
     SharedModule
   ],
   declarations: [
-    FollowHistoryComponent,
+    FollowComponent,
     Option1Component,
     Option2Component,
     SaveComponent,
@@ -63,4 +63,4 @@ export const routes = [
     
   ]
 })
-export class FollowHistoryModule { }
+export class FollowModule { }

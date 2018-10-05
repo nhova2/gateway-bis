@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-follow-history',
-  templateUrl: './follow-history.component.html',
-  styleUrls: ['./follow-history.component.scss']
+  selector: 'app-follow',
+  templateUrl: './follow.component.html',
+  styleUrls: ['./follow.component.scss']
 })
-export class FollowHistoryComponent implements OnInit {
+export class FollowComponent implements OnInit {
   @ViewChild('sidenav') sidenav: any;
   public sidenavOpen:boolean = true;
   public links = [

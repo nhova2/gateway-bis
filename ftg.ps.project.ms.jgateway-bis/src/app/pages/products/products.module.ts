@@ -25,11 +25,12 @@ export const routes = [
     SwiperModule,
     NgxPaginationModule,
     SharedModule,
-    PipesModule
+    PipesModule,
+
   ],
   declarations: [
-    ProductsComponent, 
-    ProductComponent, 
+    ProductsComponent,
+    ProductComponent,
     ProductZoomComponent
   ],
   entryComponents:[

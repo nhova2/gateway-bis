@@ -59,3 +59,27 @@
         }
     }
 }
+
+.example-card {
+    max-width: 220px;
+}
+
+.example-header-image {
+    background-image: url('../../../assets/images/Home/twitter-icon.png');
+    background-size: cover ;
+}
+.ap-articles {
+    font-size: 10px;
+    text-transform: lowercase;
+}
+.imgProdOrSer {
+    background-image: url('../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Photo_Bg.png') !important;
+    background-repeat: no-repeat;
+    /* width: 20% !important; */
+    background-size: 110%;
+}
+
+.descriptif-prod {
+    font-size: 10px;
+    text-justify: auto;
+}

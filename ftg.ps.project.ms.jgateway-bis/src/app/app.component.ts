@@ -15,14 +15,14 @@ export class AppComponent {
   }
 
   ngOnInit() {
-   // this.router.navigate(['']);  //redirect other pages to homepage on browser refresh    
+   this.router.navigate(['']);  //redirect other pages to homepage on browser refresh    
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
           window.scrollTo(0,0);
       }
-    })  
+    })
   }
 }

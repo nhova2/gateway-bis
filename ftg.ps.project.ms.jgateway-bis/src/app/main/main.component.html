@@ -1,0 +1,82 @@
+<mat-sidenav-container> 
+
+    <mat-toolbar color="primary">
+        <mat-toolbar-row fxLayoutAlign="space-between center" class="top-toolbar theme-container">
+            <span fxHide="false" fxHide.gt-sm>
+                <button mat-button (click)="sidenav.toggle()" class="sidenav-toggle">
+                    <mat-icon>menu</mat-icon>
+                </button> 
+            </span>
+            <span fxShow="false" fxShow.gt-xs fxLayoutAlign="center center"></span>
+            <span fxShow="false" fxShow.gt-sm></span>
+            <app-top-menu></app-top-menu>       
+        </mat-toolbar-row>
+        <mat-toolbar-row fxLayoutAlign="space-between center" class="logo-toolbar theme-container">
+            <a class="logo" routerLink="/" (click)="closeSubMenus()"><img src="../../assets/images/header/FineTech_PS_Elmt_Header_Logo_Cofina.png" alt=""></a>
+            <div fxFlex fxFlexOffset.gt-sm="10" fxShow="false" fxShow.gt-sm>
+                <form method="get"  class="search-form" fxLayout="row">
+                    <!-- <button mat-raised-button [matMenuTriggerFor]="categoriesMenu" #categoriesMenuTrigger="matMenuTrigger" type="button" class="mat-elevation-z0 categories text-truncate text-muted">{{category?.name}}<mat-icon>arrow_drop_down</mat-icon></button>
+                    <mat-menu #categoriesMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
+                        <span (mouseleave)="categoriesMenuTrigger.closeMenu()">
+                            <app-category-list [categories]="categories" [categoryParentId]="0" (change)="changeCategory($event)"></app-category-list>
+                        </span>
+                    </mat-menu> -->
+                    <input type="text" placeholder="Type to search..." fxFlex>
+                    <button mat-mini-fab (click)="search()" type="button" class="search-btn mat-elevation-z0 text-muted">
+                        <mat-icon>search</mat-icon>
+                    </button> 
+                </form>
+            </div>
+          
+           
+
+            <div fxFlexOffset="10" fxLayout="row" fxLayoutAlign="center center">                
+
+                
+
+                <div fxLayoutAlign="center center" fxHide="false" fxHide.gt-sm> 
+                    <!-- <button mat-icon-button [matMenuTriggerFor]="searchMenu" #searchMenuTrigger="matMenuTrigger" class="search-toggle-btn">
+                        <mat-icon class="mat-icon-lg">search</mat-icon>
+                    </button> -->
+                    <mat-menu #searchMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="search-dropdown mat-elevation-z8">
+                        <form method="get" fxFlex class="search-form">
+                            <!-- <button mat-raised-button [matMenuTriggerFor]="categories2Menu" #categories2MenuTrigger="matMenuTrigger" type="button" class="mat-elevation-z0 categories text-muted" (click)="stopClickPropagate($event)">{{category?.name}}<mat-icon>arrow_drop_down</mat-icon></button>
+                            <mat-menu #categories2Menu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
+                                <span (mouseleave)="categories2MenuTrigger.closeMenu()">
+                                    <app-category-list [categories]="categories" [categoryParentId]="0" (change)="changeCategory($event)"></app-category-list>
+                                </span>
+                            </mat-menu> -->
+                            <input type="text" placeholder="Type to search..." fxFlex (click)="stopClickPropagate($event)">
+                            <button mat-mini-fab (click)="search()" type="button" class="search-btn mat-elevation-z0 text-muted">
+                                <mat-icon>search</mat-icon>
+                            </button> 
+                        </form>
+                    </mat-menu>
+                </div>
+
+            </div>
+            
+        </mat-toolbar-row>
+    </mat-toolbar> 
+
+
+ 
+    <app-admin-menu></app-admin-menu>  
+
+    
+    <div class="theme-container main"> 
+        <app-admin-breadcrumb></app-admin-breadcrumb>
+        <router-outlet></router-outlet>
+    </div>
+    
+
+    <!-- <app-options></app-options> -->
+
+    <app-footer></app-footer>
+
+    <div *ngIf="showBackToTop" fxLayout="row" fxLayoutAlign="center center" class="back-to-top transition" (click)="scrollToTop()">
+        <mat-icon>arrow_upward</mat-icon>
+    </div>
+
+
+ </mat-sidenav-container>

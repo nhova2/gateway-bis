@@ -2,6 +2,7 @@ import { Routes, RouterModule, PreloadAllModules  } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 
 import { PagesComponent } from './pages/pages.component';
+import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
@@ -19,6 +20,14 @@ export const routes: Routes = [
             { path: 'brands', loadChildren: 'app/pages/brands/brands.module#BrandsModule', data: { breadcrumb: 'Brands' } }
             { path: '', loadChildren: 'app/pages/products/products.module#ProductsModule', data: { breadcrumb: 'All Products' } }
     ]
+    },
+    { 
+        path: '', 
+        component: MainComponent, children: [
+            { path: '', loadChildren: 'app/main/admin/admin.module#AdminModule' },
+            { path: 'admin', loadChildren: 'app/main/admin/admin.module#AdminModule', data: { breadcrumb: '' } },
+            { path: 'follow', loadChildren: 'app/main/follow/follow.module#FollowModule', data: { breadcrumb: 'Suivi Historique' } }
+        ]
     },
     { path: '**', component: NotFoundComponent }
 ];

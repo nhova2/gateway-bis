@@ -30,41 +30,48 @@
     </span>  --> 
 
     <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger">
-        <mat-icon class="mat-icon-sm account-icon">person</mat-icon> <span fxShow="false" fxShow.gt-sm>Compte</span> <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
+        <mat-icon class="mat-icon-sm account-icon">person</mat-icon> <span fxShow="false" fxShow.gt-sm>Espace utlisateur</span> <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
     </a>
-    <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown account">
-        <span (mouseleave)="accountMenuTrigger.closeMenu()">
-            <!-- <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info">                   
-                <img src="assets/images/others/user.jpg" alt="user-image" width="50">
-                <p>Emilio Verdines <br> <small>emilio_v (152<mat-icon class="mat-icon-xs">star</mat-icon>)</small></p>
+    <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown account">   
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div>
+                &nbsp;
             </div>
-            <div class="divider"></div>
-            <a mat-menu-item routerLink="/account"> 
-                <mat-icon class="mat-icon-sm">settings</mat-icon>
-                <span>Account Settings</span> 
-            </a>
-            <a mat-menu-item routerLink="/compare" fxHide="false" fxHide.gt-sm>
-                <mat-icon class="mat-icon-sm">compare</mat-icon>
-                <span>Compare ({{appService.Data.compareList.length}})</span> 
-            </a>
-            <a mat-menu-item routerLink="/wishlist" fxHide="false" fxHide.gt-sm>
-                <mat-icon class="mat-icon-sm">favorite</mat-icon>
-                <span>Wishlist ({{appService.Data.wishList.length}})</span>
-            </a>
-            <a mat-menu-item routerLink="/"> 
-                <mat-icon class="mat-icon-sm">lock</mat-icon>
-                <span>Lock screen</span> 
-            </a>
-            <a mat-menu-item routerLink="/"> 
-                <mat-icon class="mat-icon-sm">help</mat-icon>
-                <span>Help</span> 
-            </a> -->
-            <div class="divider"></div>
-            <a mat-menu-item routerLink="/sign-in"> 
-                <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
-                <span>Se connecter</span> 
-            </a>
-        </span>
+            <div>
+                <form class="example-form" (click)="$event.stopPropagation();">
+                    <div fxLayout="column">
+                        <div fxLayout="row" fxLayoutGap="0px">
+                            <div>
+                                <mat-icon>person</mat-icon>
+                            </div>
+                            <div>
+                                <mat-form-field>
+                                    <input matInput placeholder="Username" (click)="$event.stopPropagation();">
+                                </mat-form-field>
+                            </div>
+                            
+                        </div>
+                        <div fxLayout="row">
+                            <div>
+                                <mat-icon>lock</mat-icon>
+                            </div>
+                            <div>
+                                <mat-form-field>
+                                    <input matInput placeholder="Mot de passe" (click)="$event.stopPropagation();">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                </form>
+                <div class="divider"></div>
+                <a mat-menu-item routerLink="/sign-in">
+                    <span>Inscription</span>
+                </a>
+            </div>
+        </div>     
     </mat-menu>    
 
 </div>  

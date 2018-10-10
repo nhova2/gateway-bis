@@ -29,6 +29,21 @@ export class ProductsComponent implements OnInit {
   public sizes = ["S","M","L","XL","2XL","32","36","38","46","52","13.3\"","15.4\"","17\"","21\"","23.4\""];
   public page:any;
 
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+  
+
   constructor(private activatedRoute: ActivatedRoute, public appService:AppService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {

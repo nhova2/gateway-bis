@@ -36,7 +36,7 @@
         </mat-accordion>
 
     </mat-sidenav>
-    <mat-sidenav opened mode="side" position="end" >
+    <mat-sidenav opened mode="side" position="end" #sidenav2 perfectScrollbar>
         <mat-accordion displayMode="flat" multi="true" class="tweets" >
             <mat-expansion-panel expanded>
                 <mat-expansion-panel-header>
@@ -110,7 +110,13 @@
             <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>more_vert</mat-icon>
             </button>
-            <h4>Article les plus recherchés</h4>
+            <h4>Article les plus recherchés: </h4>
+            <mat-chip-list>
+                <mat-chip>Domaine 14</mat-chip>
+                <mat-chip>Activité 15</mat-chip>
+                <mat-chip color="primary" selected>Produit 45</mat-chip>
+                <mat-chip color="accent" selected>Localité</mat-chip>
+            </mat-chip-list>
         </div>
         
         <div fxLayout="column" fxLayoutGap="20px" class="py-2">
@@ -121,48 +127,86 @@
                             <h4>Produits & services</h4>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                        <div fxLayout="column">
-                            <mat-grid-list cols="4" rowHeight="150px">
-                                <mat-grid-tile class="imgProdOrSer"></mat-grid-tile>
-                                <mat-grid-tile>
-                                    <div fxLayout="column" fxLayoutGap="1px">
-                                        <div fxFlex class="header-prod" style="position:absolute; top:0px;left:0px">
-                                            <h3>Nom produit</h3>
-                                            <h4 style="color:palegreen">Quantité</h4>
+                    <div fxLayout="row">
+                        <div fxLayout="row" fxLayoutGap="1px" class="prodServBackground">
+                            <div class="imgProdOrSer">
+                                <div fxLayout="row" fxLayoutAlign="start">
+                                    <div fxLayout="column" fxLayoutGap="95px">
+                                        <div>&nbsp;&nbsp;</div>
+                                        <div class="footer-price">
+                                            <span style="font-size: 15px; font-weight: bold;">75 000</span>
+                                            <span style="font-size:12px"> XOF</span>
+                                            <div style="font-size: 12px; font-weight: bold; color:rgb(109, 184, 66)">Disponibilité</div>
                                         </div>
-                                        <div fxFlex class="body-prod" fxLayout="row">
-                                            <div fxFlex class="descriptif-prod" fxLayout="column">
-                                                <div fxFlex style="font-weight:bold">Descriptif du produit</div>
-                                                <p style="line-height: normal;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                            <div fxFlex class="avatar-prod" style="position:absolute; bottom:0px;right:0px">
-                                                <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" alt="" width="28px">
-                                            </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="prodOrServ-content" fxLayout="column">
+                                <div fxLayout="column" fxLayoutGap="5px">
+                                    <div>
+                                        <h2>Nom Produit</h2>
+                                        <h6>quantité</h6>
+                                    </div>
+                                    <div fxLayout="row" fxLayoutGap="0px">
+                                        <div>
+                                            <h6>Description</h6>
+                                            <p class="descriptif-prod">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quasi quaerat laboriosam.
+                                            </p>
                                         </div>
-                                    </div>      
-                                    <div><a href="#">test</a></div>
-                                </mat-grid-tile>
-                                
-                                <mat-grid-tile class="imgProdOrSer"></mat-grid-tile>
-                                <mat-grid-tile>        
-                                    <div fxLayout="column" fxLayoutGap="1px">
-                                        <div fxFlex class="header-prod" style="position:absolute; top:0px;left:0px">
-                                            <h3>Nom produit</h3>
-                                            <h4 style="color:palegreen">Quantité</h4>
+                                        <div class="img-seller">
+                                            <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" width="30px" alt="">
                                         </div>
-                                        <div fxFlex class="body-prod" fxLayout="row">
-                                            <div fxFlex class="descriptif-prod" fxLayout="column">
-                                                <div fxFlex style="font-weight:bold">Descriptif du produit</div>
-                                                <p style="line-height: normal;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                            <div fxFlex class="avatar-prod" style="position:absolute; bottom:0px;right:0px">
-                                                <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" alt="" width="28px">
+                            
+                                    </div>
+                                </div>
+                                <div>
+                                   <a fxLayoutAlign="right" mat-button class="add-panier-btn" routerLink="."><span class="add-panier">Ajouter au panier +</span> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="1px"> 
+                            <div fxLayout="row" fxLayoutGap="1px" class="prodServBackground">
+                                <div class="imgProdOrSer">
+                                    <div fxLayout="row" fxLayoutAlign="start">
+                                        <div fxLayout="column" fxLayoutGap="95px">
+                                            <div>&nbsp;&nbsp;</div>
+                                            <div class="footer-price">
+                                                <span style="font-size: 15px; font-weight: bold;">75 000</span>
+                                                <span style="font-size:12px"> XOF</span>
+                                                <div style="font-size: 12px; font-weight: bold; color:rgb(109, 184, 66)">Disponibilité</div>
                                             </div>
                                         </div>
                                     </div>
-                                </mat-grid-tile>
-                            </mat-grid-list>
+                                </div>
+                                <div class="prodOrServ-content" fxLayout="column">
+                                    <div fxLayout="column" fxLayoutGap="5px">
+                                        <div>
+                                            <h2>Nom Produit</h2>
+                                            <h6>quantité</h6>
+                                        </div>
+                                        <div fxLayout="row" fxLayoutGap="0px">
+                                            <div>
+                                                <h6>Description</h6>
+                                                <p class="descriptif-prod">
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quasi quaerat laboriosam.
+                                                </p>
+                                            </div>
+                                            <div class="img-seller">
+                                                <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" width="30px" alt="">
+                                            </div>
+                            
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a fxLayoutAlign="right" mat-button class="add-panier-btn" routerLink=".">
+                                            <span class="add-panier">Ajouter au panier +</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>    
                 </mat-expansion-panel>
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
@@ -398,56 +442,90 @@
                         </mat-card-footer>
                     </mat-card>
                 </mat-expansion-panel>
-                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
                     <mat-expansion-panel-header>
                         <mat-panel-title>
                             <h4>Enchère en cours</h4>
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <mat-card>
-                        <div fxLayout="row" fxLayoutGap="30px">
-                            <div>
-                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">
-                            </div>
-                            <div>
-                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span>
-                                <br>
-                                <mat-divider></mat-divider>
-                                <span style="font-size:16px; font-weight:bold">Objet</span>
-                            </div>
-                        </div>
-                    
+                    <mat-card >
                         <mat-card-title>
-                            <div fxLayout="row" fxLayoutGap="190px">
-                                <div>
-                                    <div>&nbsp;&nbsp;</div>
-                                </div>
-                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
-                                    <div fxLayout="column">
-                                        <div>&nbsp;&nbsp;</div>
-                                        <div style="font-size: 28px; font-weight:bold">28
-                                            <span style="text-transform:lowercase; font-size: 10px;">Lots</span>
+                            <div fxLayout="row" fxFlex>
+                                <div fxLayout="row" fxFlex="1 6 50%" class="">
+                                    <div class="imgProdOrSer">
+                                    </div>
+                                    <div class="prodOrServ-content" fxLayout="column">
+                                        <div fxLayout="column" fxLayoutGap="5px">
+                                            <div>
+                                                <span class="title-enchere">(Enchère n)</span>
+                                                <mat-divider style="position: absolute; left: 146px; width: 25%;"></mat-divider>
+                                                <h6>Nom Produit</h6>
+                                                <span style="font-size:12px">Quantité</span>
+                                            </div>
+                                            <div fxLayout="row" fxLayoutGap="0px">
+                                                <div>
+                                                    <span style="font-size:12px">Description</span>
+                                                    <p class="descriptif-prod">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quasi quaerat laboriosam.
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" width="30px" class="img-seller">
+                                                </div>
+                                
+                                            </div>
                                         </div>
                                     </div>
-                                    <div fxLayout="column">
-                                        <div style="font-size:13px">Date limite</div>
-                                        <div style="color:red">09.09.2018</div>
-                                    </div>
-                                    <div fxLayout="column">
-                                        <div style="font-size:13px">Budget</div>
-                                        <div>75 000
-                                            <span style="font-size:10px; height:2%">XOF</span>
+                                </div>         
+                                <div fxLayout="column" fxLayoutGap="30px">
+                                    <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="8px">
+                                        <div fxLayout="column">
+                                            <div>&nbsp;&nbsp;</div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Enchère courante</div>
+                                            <div style="color:red ; font-size:14px; font-weight:bold">1 800 000
+                                                <span style="font-size:10px !important; height:2%; color:grey">XOF</span>
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Estimation valeur</div>
+                                            <div style="font-size:14px; font-weight:bold">1 545 877
+                                                <span style="font-size:10px !important; height:2%; color:grey">XOF</span>
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
                                         </div>
                                     </div>
-                                    <div fxLayout="column">
-                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+
+                                    <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="13px">
+                                        <div fxLayout="column">
+                                            <div>&nbsp;&nbsp;</div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Enchère</div>
+                                            <div style="font-size:16px; font-weight:bold">
+                                                98
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Vues</div>
+                                            <div style="font-size:16px; font-weight:bold">
+                                                127
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column" class="chrono-enchere" fxFlex fxLayoutAlign="space-between bottom">
+                                            <div>&nbsp;</div>
+                                            <div class="chrono-content">02:10:00.0</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                     
                         </mat-card-title>
                         <mat-card-content>
-                            <div fxLayout="row" fxLayoutGap="2px">
+                            <div fxLayout="row" fxLayoutGap="2px" fxFlex>
                                 <div fxLayout="column" fxLayoutGap="1px">
                                     <div>
                                         <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
@@ -506,62 +584,96 @@
                                 </div>
                             </div>
                         </mat-card-content>
-                        <mat-card-footer style="background-color:gray">
-                            <div fxLayout="row" fxLayoutGap="320px">
-                                <div>
-                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                        <mat-card-footer>
+                            <div fxLayout="row" fxLayoutGap="5px">
+                                <div fxFlex>
+                                    <button class="enchere-btn" fxLayoutAlign="left" mat-raised-button routerLink="."><span class="bottom-text-enchere">Details de l'offre</span></button>
                                 </div>
-                                <div>
-                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                <div fxFlex>
+                                    <button class="enchere-btn-success" fxLayoutAlign="right" mat-raised-button routerLink="."><span class="bottom-text-enchere">repondre à l'offre </span><mat-icon style="color:white">done</mat-icon></button>
                                 </div>
                             </div>
                         </mat-card-footer>
                     </mat-card>
                     <br>
                     <mat-card>
-                        <div fxLayout="row" fxLayoutGap="30px">
-                            <div>
-                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">
-                            </div>
-                            <div>
-                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span>
-                                <br>
-                                <mat-divider></mat-divider>
-                                <span style="font-size:16px; font-weight:bold">Objet</span>
-                            </div>
-                        </div>
-                    
                         <mat-card-title>
-                            <div fxLayout="row" fxLayoutGap="190px">
-                                <div>
-                                    <div>&nbsp;&nbsp;</div>
+                            <div fxLayout="row" fxFlex>
+                                <div fxLayout="row" fxFlex="1 6 50%" class="">
+                                    <div class="imgProdOrSer">
+                                    </div>
+                                    <div class="prodOrServ-content" fxLayout="column">
+                                        <div fxLayout="column" fxLayoutGap="5px">
+                                            <div>
+                                                <span class="title-enchere">(Enchère n)</span>
+                                                <mat-divider style="position: absolute; left: 146px; width: 25%;"></mat-divider>
+                                                <h6>Nom Produit</h6>
+                                                <span style="font-size:12px">Quantité</span>
+                                            </div>
+                                            <div fxLayout="row" fxLayoutGap="0px">
+                                                <div>
+                                                    <span style="font-size:12px">Description</span>
+                                                    <p class="descriptif-prod">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quasi quaerat laboriosam.
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" width="30px" class="img-seller">
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
-                                    <div fxLayout="column">
-                                        <div>&nbsp;&nbsp;</div>
-                                        <div style="font-size: 28px; font-weight:bold">28
-                                            <span style="text-transform:lowercase; font-size: 10px;">Lots</span>
+                                <div fxLayout="column" fxLayoutGap="30px">
+                                    <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="8px">
+                                        <div fxLayout="column">
+                                            <div>&nbsp;&nbsp;</div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Enchère courante</div>
+                                            <div style="color:red ; font-size:14px; font-weight:bold">1 800 000
+                                                <span style="font-size:10px !important; height:2%; color:grey">XOF</span>
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Estimation valeur</div>
+                                            <div style="font-size:14px; font-weight:bold">1 545 877
+                                                <span style="font-size:10px !important; height:2%; color:grey">XOF</span>
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
                                         </div>
                                     </div>
-                                    <div fxLayout="column">
-                                        <div style="font-size:13px">Date limite</div>
-                                        <div style="color:red">09.09.2018</div>
-                                    </div>
-                                    <div fxLayout="column">
-                                        <div style="font-size:13px">Budget</div>
-                                        <div>75 000
-                                            <span style="font-size:10px; height:2%">XOF</span>
+                    
+                                    <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="13px">
+                                        <div fxLayout="column">
+                                            <div>&nbsp;&nbsp;</div>
                                         </div>
-                                    </div>
-                                    <div fxLayout="column">
-                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Enchère</div>
+                                            <div style="font-size:16px; font-weight:bold">
+                                                98
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Vues</div>
+                                            <div style="font-size:16px; font-weight:bold">
+                                                127
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column" class="chrono-enchere" fxFlex fxLayoutAlign="space-between bottom">
+                                            <div>&nbsp;</div>
+                                            <div class="chrono-content">02:10:00.0</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                     
                         </mat-card-title>
                         <mat-card-content>
-                            <div fxLayout="row" fxLayoutGap="2px">
+                            <div fxLayout="row" fxLayoutGap="2px" fxFlex>
                                 <div fxLayout="column" fxLayoutGap="1px">
                                     <div>
                                         <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
@@ -620,63 +732,108 @@
                                 </div>
                             </div>
                         </mat-card-content>
-                        <mat-card-footer style="background-color:gray">
-                            <div fxLayout="row" fxLayoutGap="320px">
-                                <div>
-                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                        <mat-card-footer>
+                            <div fxLayout="row" fxLayoutGap="5px">
+                                <div fxFlex>
+                                    <button class="enchere-btn" fxLayoutAlign="left" mat-raised-button routerLink=".">
+                                        <span class="bottom-text-enchere">Details de l'offre</span>
+                                    </button>
                                 </div>
-                                <div>
-                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                <div fxFlex>
+                                    <button class="enchere-btn-success" fxLayoutAlign="right" mat-raised-button routerLink=".">
+                                        <span class="bottom-text-enchere">repondre à l'offre </span>
+                                        <mat-icon style="color:white">done</mat-icon>
+                                    </button>
                                 </div>
                             </div>
                         </mat-card-footer>
                     </mat-card>
                     <br>
                     <mat-card>
-                        <div fxLayout="row" fxLayoutGap="30px">
-                            <div>
-                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">              
-                            </div>
-                            <div>
-                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span><br>
-                                <mat-divider></mat-divider>
-                                <span style="font-size:16px; font-weight:bold">Objet</span>
-                            </div>
-                        </div>
-                        
                         <mat-card-title>
-                            <div fxLayout="row" fxLayoutGap="190px">
-                                 <div>           
-                                    <div>&nbsp;&nbsp;</div>
+                            <div fxLayout="row" fxFlex>
+                                <div fxLayout="row" fxFlex="1 6 50%" class="">
+                                    <div class="imgProdOrSer">
+                                    </div>
+                                    <div class="prodOrServ-content" fxLayout="column">
+                                        <div fxLayout="column" fxLayoutGap="5px">
+                                            <div>
+                                                <span class="title-enchere">(Enchère n)</span>
+                                                <mat-divider style="position: absolute; left: 146px; width: 25%;"></mat-divider>
+                                                <h6>Nom Produit</h6>
+                                                <span style="font-size:12px">Quantité</span>
+                                            </div>
+                                            <div fxLayout="row" fxLayoutGap="0px">
+                                                <div>
+                                                    <span style="font-size:12px">Description</span>
+                                                    <p class="descriptif-prod">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quasi quaerat laboriosam.
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" width="30px" class="img-seller">
+                                                </div>
+                    
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
-                                    <div fxLayout="column">
-                                        <div>&nbsp;&nbsp;</div>    
-                                        <div style="font-size: 28px; font-weight:bold">28 <span style="text-transform:lowercase; font-size: 10px;">Lots</span></div>                                    </div>
-                                    <div fxLayout="column">
-                                        <div style="font-size:13px">Date limite</div> 
-                                        <div style="color:red">09.09.2018</div>    
+                                <div fxLayout="column" fxLayoutGap="30px">
+                                    <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="8px">
+                                        <div fxLayout="column">
+                                            <div>&nbsp;&nbsp;</div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Enchère courante</div>
+                                            <div style="color:red ; font-size:14px; font-weight:bold">1 800 000
+                                                <span style="font-size:10px !important; height:2%; color:grey">XOF</span>
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Estimation valeur</div>
+                                            <div style="font-size:14px; font-weight:bold">1 545 877
+                                                <span style="font-size:10px !important; height:2%; color:grey">XOF</span>
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                        </div>
                                     </div>
-                                    <div fxLayout="column">
-                                        <div style="font-size:13px">Budget</div>
-                                        <div>75 000 <span style="font-size:10px; height:2%">XOF</span> </div>
+                    
+                                    <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="13px">
+                                        <div fxLayout="column">
+                                            <div>&nbsp;&nbsp;</div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Enchère</div>
+                                            <div style="font-size:16px; font-weight:bold">
+                                                98
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column">
+                                            <div style="font-size:10px; font-weight:bold; color:rgb(182, 177, 177)">Vues</div>
+                                            <div style="font-size:16px; font-weight:bold">
+                                                127
+                                            </div>
+                                        </div>
+                                        <div fxLayout="column" class="chrono-enchere" fxFlex fxLayoutAlign="space-between bottom">
+                                            <div>&nbsp;</div>
+                                            <div class="chrono-content">02:10:00.0</div>
+                                        </div>
                                     </div>
-                                    <div fxLayout="column">
-                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
-                                    </div>
-                                </div>        
+                                </div>
                             </div>
-                            
+                    
                         </mat-card-title>
                         <mat-card-content>
-                            <div fxLayout="row" fxLayoutGap="2px">
+                            <div fxLayout="row" fxLayoutGap="2px" fxFlex>
                                 <div fxLayout="column" fxLayoutGap="1px">
                                     <div>
                                         <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
                                     </div>
                                     <div>
                                         <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_1.png" alt="" width="80px">
-                                    </div>            
+                                    </div>
                                 </div>
                                 <div fxLayout="column" fxLayoutGap="1px">
                                     <div>
@@ -692,7 +849,7 @@
                                     </div>
                                     <div>
                                         <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_3.png" alt="" width="80px">
-                                    </div>                            
+                                    </div>
                                 </div>
                                 <div fxLayout="column" fxLayoutGap="1px">
                                     <div>
@@ -728,16 +885,21 @@
                                 </div>
                             </div>
                         </mat-card-content>
-                        <mat-card-footer style="background-color:gray">
-                            <div fxLayout="row" fxLayoutGap="320px">
-                                <div>
-                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                        <mat-card-footer>
+                            <div fxLayout="row" fxLayoutGap="5px">
+                                <div fxFlex>
+                                    <button class="enchere-btn" fxLayoutAlign="left" mat-raised-button routerLink=".">
+                                        <span class="bottom-text-enchere">Details de l'offre</span>
+                                    </button>
                                 </div>
-                                <div>
-                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
-                                </div>                   
-                            </div>      
-                    </mat-card-footer>
+                                <div fxFlex>
+                                    <button class="enchere-btn-success" fxLayoutAlign="right" mat-raised-button routerLink=".">
+                                        <span class="bottom-text-enchere">repondre à l'offre </span>
+                                        <mat-icon style="color:white">done</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </mat-card-footer>
                     </mat-card>
                 </mat-expansion-panel>
             </mat-accordion>

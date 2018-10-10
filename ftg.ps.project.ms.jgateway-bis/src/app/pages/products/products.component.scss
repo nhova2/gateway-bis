@@ -74,12 +74,69 @@
 }
 .imgProdOrSer {
     background-image: url('../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Photo_Bg.png') !important;
+    background-position: center;
     background-repeat: no-repeat;
-    /* width: 20% !important; */
-    background-size: 110%;
+    background-size: cover;
+    width: 100%
 }
 
 .descriptif-prod {
     font-size: 10px;
     text-justify: auto;
+    line-height: normal;
+}
+.add-panier{
+    color: #fff;
+}
+.add-panier-btn {
+    background-color:black !important;
+}
+.prodServBackground{
+    border-radius: 10px 27px 27px 0px;
+    -moz-border-radius: 10px 27px 27px 0px;
+    -webkit-border-radius: 2px 1px 2px 0px;
+    border: 1px solid #0000005c;
+}
+.footer-price{
+    background-image: url('../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Price_Bg.png') !important;
+    background-repeat: no-repeat;
+    background-size: 117px;
+    padding: 5%;
+    width: 150%;
+}
+.img-seller {
+    bottom: 0;
+    position: relative;
+    top: 50%;
+}
+.prodOrServ-content{
+    padding-left: 2%;
+}
+.title-enchere{
+    color:red;
+    font-size: 12px;
+    font-weight: bold;
+    background-image: url('../../../assets/images/Enchere/FineTech_PS_Elmt_Enchere_Bg_Rpt.png') !important;
+}
+.chrono-enchere{
+    background-image: url('../../../assets/images/Enchere/FineTech_PS_Elmt_Enchere_Timer_Bg.png');
+    background-repeat: no-repeat;
+    background-size: 126px;
+    background-position: bottom;
+}
+.chrono-content{
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+.enchere-btn{
+    width: 100%;
+    background-color: black !important;
+}
+.enchere-btn-success {
+    width: 100%;
+    background-color:green !important;
+}
+.bottom-text-enchere{
+    color: white;
 }

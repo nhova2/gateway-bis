@@ -1,0 +1,85 @@
+.filter-sidenav{
+    width: 280px;
+    padding: 2px;
+    //background: transparent !important;
+    .mat-expansion-panel-header-title {
+        text-transform: uppercase;
+    }
+}
+.filter-row{
+    background: #fff;
+    padding: 8px 12px;
+}
+.all-products{
+    min-height: 400px;
+    padding: 2px;
+    overflow: hidden;
+    &.p-left{
+        padding-left: 16px;
+    }
+}
+
+.products-wrapper{
+    margin: 8px -8px;
+    .col{
+        padding: 8px;
+    }
+}
+
+.categories-wrapper{
+    position: relative;
+    max-height: 300px;
+}
+
+.filter-buttons{
+    button{
+        min-width: 36px;
+        margin: 0 6px 10px 0;
+        padding: 0;
+    }
+}
+
+.filter-price{
+    .mat-slider-horizontal{
+        min-width: 110px;
+    }
+}
+
+.filter-brands{
+    button{
+        width: 66px;
+        height: 44px;
+        min-width: 66px;
+        margin: 0 6px 10px 0;
+        padding: 0px;
+        overflow: hidden;
+        img{
+            width: 66px;
+            height: 44px;
+        }
+    }
+}
+
+.example-card {
+    max-width: 220px;
+}
+
+.example-header-image {
+    background-image: url('../../../assets/images/Home/twitter-icon.png');
+    background-size: cover ;
+}
+.ap-articles {
+    font-size: 10px;
+    text-transform: lowercase;
+}
+.imgProdOrSer {
+    background-image: url('../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Photo_Bg.png') !important;
+    background-repeat: no-repeat;
+    /* width: 20% !important; */
+    background-size: 110%;
+}
+
+.descriptif-prod {
+    font-size: 10px;
+    text-justify: auto;
+}

@@ -1,0 +1,746 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="filter-sidenav" perfectScrollbar>
+        
+        <mat-accordion displayMode="flat" multi="true">
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h4>Filtres</h4>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div fxLayout="column">
+                    <mat-checkbox color="primary">Domaines</mat-checkbox>
+                    <mat-checkbox color="primary">Activités</mat-checkbox>
+                    <mat-checkbox color="primary">Boutiques</mat-checkbox>
+                    <mat-checkbox color="primary">Localités</mat-checkbox>
+                    <mat-checkbox color="primary">Références produit</mat-checkbox>
+                    <mat-checkbox color="primary">Prix</mat-checkbox>
+                    <mat-checkbox color="primary">Disponibilités</mat-checkbox>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h4>Catégories</h4>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div fxLayout="column">
+                    <a fxLayoutAlign="left" mat-button routerLink=".">Technologie</a>
+                    <a fxLayoutAlign="left" mat-button routerLink=".">Business</a>
+                    <a fxLayoutAlign="left" mat-button routerLink=".">WEB</a>
+                    <a fxLayoutAlign="left" mat-button routerLink=".">E-COMMERCE</a>
+                    <a fxLayoutAlign="left" mat-button routerLink=".">WORDPRESS</a>
+                    <a fxLayoutAlign="left" mat-button routerLink=".">IOS</a>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </mat-sidenav>
+    <mat-sidenav opened mode="side" position="end" >
+        <mat-accordion displayMode="flat" multi="true" class="tweets" >
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h4>Tweets</h4>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div fxLayout="column">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>Shiba Inu</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content style=" padding-bottom: 0; margin-bottom: 0;">
+                            <p fxLayoutAlign="left">
+                                The Shiba Inu is the smallest of the six original.
+                            </p>
+                            <br>
+                        </mat-card-content>
+                        <mat-card-actions style=" padding-top: 0;">
+                            <button mat-button>show summury</button>
+                        </mat-card-actions>
+                    </mat-card>
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>Shiba Inu</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content style=" padding-bottom: 0; margin-bottom: 0;">
+                            <p>
+                                The Shiba Inu is the smallest of the six original.
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions style=" padding-top: 0;">
+                            <button mat-button>show summury</button>
+                        </mat-card-actions>
+                    </mat-card>
+                    
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion displayMode="flat" multi="true">
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <img src="../../../assets/images/Home/bot-icon.png" style=" width: 48px; height: 43px; "><h4>ChatBot</h4>
+                        <a fxLayoutAlign="left" mat-button routerLink="."></a>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div fxLayout="column">
+                    <mat-card class="example-card">
+                        <mat-card-content style=" padding-bottom: 0; margin-bottom: 0;">
+                            <p fxLayoutAlign="left" style="background: #67606061;border-radius: 25px;padding: 5%;">
+                                Bonjour en quoi puis je vous etre utile aujourd'hui ?
+                            </p>
+                            <br>
+                            <p fxLayoutAlign="right" style="background: rgba(236, 88, 88, 0.64);border-radius: 25px;padding: 5%;margin-left: 13%;">
+                                The Shiba Inu is the smallest of the six original.
+                            </p>
+                            <p fxLayoutAlign="left" style="margin-top: 12%; background: #67606061;border-radius: 25px;padding: 5%;">
+                                ok bla blaa ?
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-sidenav>
+    <section class="all-products" ngClass.gt-sm="p-left">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" class="filter-row mat-elevation-z1 text-muted">
+            <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <h4>Article les plus recherchés</h4>
+        </div>
+        
+        <div fxLayout="column" fxLayoutGap="20px" class="py-2">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>Produits & services</h4>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                        <div fxLayout="column">
+                            <mat-grid-list cols="4" rowHeight="150px">
+                                <mat-grid-tile class="imgProdOrSer"></mat-grid-tile>
+                                <mat-grid-tile>
+                                    <div fxLayout="column" fxLayoutGap="1px">
+                                        <div fxFlex class="header-prod" style="position:absolute; top:0px;left:0px">
+                                            <h3>Nom produit</h3>
+                                            <h4 style="color:palegreen">Quantité</h4>
+                                        </div>
+                                        <div fxFlex class="body-prod" fxLayout="row">
+                                            <div fxFlex class="descriptif-prod" fxLayout="column">
+                                                <div fxFlex style="font-weight:bold">Descriptif du produit</div>
+                                                <p style="line-height: normal;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                            <div fxFlex class="avatar-prod" style="position:absolute; bottom:0px;right:0px">
+                                                <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" alt="" width="28px">
+                                            </div>  
+                                        </div>
+                                    </div>      
+                                    <div><a href="#">test</a></div>
+                                </mat-grid-tile>
+                                
+                                <mat-grid-tile class="imgProdOrSer"></mat-grid-tile>
+                                <mat-grid-tile>        
+                                    <div fxLayout="column" fxLayoutGap="1px">
+                                        <div fxFlex class="header-prod" style="position:absolute; top:0px;left:0px">
+                                            <h3>Nom produit</h3>
+                                            <h4 style="color:palegreen">Quantité</h4>
+                                        </div>
+                                        <div fxFlex class="body-prod" fxLayout="row">
+                                            <div fxFlex class="descriptif-prod" fxLayout="column">
+                                                <div fxFlex style="font-weight:bold">Descriptif du produit</div>
+                                                <p style="line-height: normal;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                            <div fxFlex class="avatar-prod" style="position:absolute; bottom:0px;right:0px">
+                                                <img src="../../../assets/images/Produit/FineTech_PS_Elmt_Produit_Seller_Bg.png" alt="" width="28px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-grid-tile>
+                            </mat-grid-list>
+                        </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>Appels d'offres</h4>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-card>
+                        <div fxLayout="row" fxLayoutGap="30px">
+                            <div>
+                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">
+                            </div>
+                            <div>
+                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span>
+                                <br>
+                                <mat-divider></mat-divider>
+                                <span style="font-size:16px; font-weight:bold">Objet</span>
+                            </div>
+                        </div>
+                    
+                        <mat-card-title>
+                            <div fxLayout="row" fxLayoutGap="190px">
+                                <div>
+                                    <div>&nbsp;&nbsp;</div>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
+                                    <div fxLayout="column">
+                                        <div>&nbsp;&nbsp;</div>
+                                        <div style="font-size: 28px; font-weight:bold">28
+                                            <span style="text-transform:lowercase; font-size: 10px;">Lots</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Date limite</div>
+                                        <div style="color:red">09.09.2018</div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Budget</div>
+                                        <div>75 000
+                                            <span style="font-size:10px; height:2%">XOF</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div fxLayout="row" fxLayoutGap="2px">
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_1.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Activité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_2.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Boutique 18</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_3.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Localité 85</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_4.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center"> Ref Produit 14</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_5.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Prix 12</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_6.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Disponibilité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_7.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer style="background-color:gray">
+                            <div fxLayout="row" fxLayoutGap="320px">
+                                <div>
+                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                                </div>
+                                <div>
+                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                </div>
+                            </div>
+                        </mat-card-footer>
+                    </mat-card>
+                    <br>
+                    <mat-card>
+                        <div fxLayout="row" fxLayoutGap="30px">
+                            <div>
+                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">
+                            </div>
+                            <div>
+                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span>
+                                <br>
+                                <mat-divider></mat-divider>
+                                <span style="font-size:16px; font-weight:bold">Objet</span>
+                            </div>
+                        </div>
+                    
+                        <mat-card-title>
+                            <div fxLayout="row" fxLayoutGap="190px">
+                                <div>
+                                    <div>&nbsp;&nbsp;</div>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
+                                    <div fxLayout="column">
+                                        <div>&nbsp;&nbsp;</div>
+                                        <div style="font-size: 28px; font-weight:bold">28
+                                            <span style="text-transform:lowercase; font-size: 10px;">Lots</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Date limite</div>
+                                        <div style="color:red">09.09.2018</div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Budget</div>
+                                        <div>75 000
+                                            <span style="font-size:10px; height:2%">XOF</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div fxLayout="row" fxLayoutGap="2px">
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_1.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Activité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_2.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Boutique 18</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_3.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Localité 85</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_4.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center"> Ref Produit 14</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_5.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Prix 12</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_6.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Disponibilité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_7.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer style="background-color:gray">
+                            <div fxLayout="row" fxLayoutGap="320px">
+                                <div>
+                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                                </div>
+                                <div>
+                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                </div>
+                            </div>
+                        </mat-card-footer>
+                    </mat-card>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h4>Enchère en cours</h4>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-card>
+                        <div fxLayout="row" fxLayoutGap="30px">
+                            <div>
+                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">
+                            </div>
+                            <div>
+                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span>
+                                <br>
+                                <mat-divider></mat-divider>
+                                <span style="font-size:16px; font-weight:bold">Objet</span>
+                            </div>
+                        </div>
+                    
+                        <mat-card-title>
+                            <div fxLayout="row" fxLayoutGap="190px">
+                                <div>
+                                    <div>&nbsp;&nbsp;</div>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
+                                    <div fxLayout="column">
+                                        <div>&nbsp;&nbsp;</div>
+                                        <div style="font-size: 28px; font-weight:bold">28
+                                            <span style="text-transform:lowercase; font-size: 10px;">Lots</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Date limite</div>
+                                        <div style="color:red">09.09.2018</div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Budget</div>
+                                        <div>75 000
+                                            <span style="font-size:10px; height:2%">XOF</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div fxLayout="row" fxLayoutGap="2px">
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_1.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Activité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_2.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Boutique 18</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_3.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Localité 85</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_4.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center"> Ref Produit 14</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_5.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Prix 12</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_6.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Disponibilité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_7.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer style="background-color:gray">
+                            <div fxLayout="row" fxLayoutGap="320px">
+                                <div>
+                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                                </div>
+                                <div>
+                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                </div>
+                            </div>
+                        </mat-card-footer>
+                    </mat-card>
+                    <br>
+                    <mat-card>
+                        <div fxLayout="row" fxLayoutGap="30px">
+                            <div>
+                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">
+                            </div>
+                            <div>
+                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span>
+                                <br>
+                                <mat-divider></mat-divider>
+                                <span style="font-size:16px; font-weight:bold">Objet</span>
+                            </div>
+                        </div>
+                    
+                        <mat-card-title>
+                            <div fxLayout="row" fxLayoutGap="190px">
+                                <div>
+                                    <div>&nbsp;&nbsp;</div>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
+                                    <div fxLayout="column">
+                                        <div>&nbsp;&nbsp;</div>
+                                        <div style="font-size: 28px; font-weight:bold">28
+                                            <span style="text-transform:lowercase; font-size: 10px;">Lots</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Date limite</div>
+                                        <div style="color:red">09.09.2018</div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Budget</div>
+                                        <div>75 000
+                                            <span style="font-size:10px; height:2%">XOF</span>
+                                        </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div fxLayout="row" fxLayoutGap="2px">
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_1.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Activité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_2.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Boutique 18</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_3.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Localité 85</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_4.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center"> Ref Produit 14</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_5.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Prix 12</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_6.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Disponibilité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_7.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer style="background-color:gray">
+                            <div fxLayout="row" fxLayoutGap="320px">
+                                <div>
+                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                                </div>
+                                <div>
+                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                </div>
+                            </div>
+                        </mat-card-footer>
+                    </mat-card>
+                    <br>
+                    <mat-card>
+                        <div fxLayout="row" fxLayoutGap="30px">
+                            <div>
+                                <img mat-card-image src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Seller_Bg.png" style="width:48px">              
+                            </div>
+                            <div>
+                                <span style="font-size:16px; color:red"> (Appels d'offres N)</span><br>
+                                <mat-divider></mat-divider>
+                                <span style="font-size:16px; font-weight:bold">Objet</span>
+                            </div>
+                        </div>
+                        
+                        <mat-card-title>
+                            <div fxLayout="row" fxLayoutGap="190px">
+                                 <div>           
+                                    <div>&nbsp;&nbsp;</div>
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="space-between left" fxLayoutGap="20px">
+                                    <div fxLayout="column">
+                                        <div>&nbsp;&nbsp;</div>    
+                                        <div style="font-size: 28px; font-weight:bold">28 <span style="text-transform:lowercase; font-size: 10px;">Lots</span></div>                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Date limite</div> 
+                                        <div style="color:red">09.09.2018</div>    
+                                    </div>
+                                    <div fxLayout="column">
+                                        <div style="font-size:13px">Budget</div>
+                                        <div>75 000 <span style="font-size:10px; height:2%">XOF</span> </div>
+                                    </div>
+                                    <div fxLayout="column">
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Rating_Gauge.png" width="34px" alt="">
+                                    </div>
+                                </div>        
+                            </div>
+                            
+                        </mat-card-title>
+                        <mat-card-content>
+                            <div fxLayout="row" fxLayoutGap="2px">
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Domaine 09</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_1.png" alt="" width="80px">
+                                    </div>            
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Activité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_2.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Boutique 18</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_3.png" alt="" width="80px">
+                                    </div>                            
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Localité 85</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_4.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center"> Ref Produit 14</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_5.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Prix 12</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_6.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                                <div fxLayout="column" fxLayoutGap="1px">
+                                    <div>
+                                        <span class="ap-articles" fxLayoutAlign="center center">Disponibilité 15</span>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/images/AppelOffre/FineTech_PS_Elmt_AppelOffre_Tag_Clr_7.png" alt="" width="80px">
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer style="background-color:gray">
+                            <div fxLayout="row" fxLayoutGap="320px">
+                                <div>
+                                    <a fxLayoutAlign="left" mat-button routerLink=".">Details de l'offre</a>
+                                </div>
+                                <div>
+                                    <a fxLayoutAlign="right" mat-button routerLink=".">repondre à l'offre</a>
+                                </div>                   
+                            </div>      
+                    </mat-card-footer>
+                    </mat-card>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </section>
+</mat-sidenav-container>
